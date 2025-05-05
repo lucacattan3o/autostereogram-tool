@@ -1,1 +1,1 @@
-# Stereogram Tool
+# Autostereogram Tool
