@@ -33,10 +33,10 @@ let obj = {
   stereoEyeSep: 6.35,  // eye separation in cm
   stereoDpi:    72,    // dpi
   stereoMu:     2,     // depth of field (fraction of viewing distance: 1 / x) (3 default) - low value >> gread depth
-  nColors: 2,
+  nColors: 5,
   invertColors: false,
   // pattern
-  patType: 'Letter Noise',
+  patType: 'Perlin Noise',
   patScale: 0.4,
   patGradScale: 0.5,
   // words
@@ -108,6 +108,7 @@ function setupLil(){
 
   // Stereogram
   const gStereo = gui.addFolder('Stereogram');
+  gStereo.add(obj, 'stereoInvert').name('Invert Depth Map');
   gStereo.add( obj, 'patType', [
     'Letter Noise',
     'SIRD',
@@ -135,31 +136,14 @@ function setupLil(){
   gStereo.add(obj, 'invertColors').name('Invert Colors');
   
   const gAdv = gStereo.addFolder('Advanced').close();
-  gAdv.add(obj, 'stereoInvert').name('Invert Depth');
   gAdv.add(obj, 'stereoEyeSep').min(5).max(8).step(0.1).name('Eye Separation');
   gAdv.add(obj, 'stereoDpi').min(72).max(300).step(1).name('DPI');
   gAdv.add(obj, 'stereoMu').min(1.1).max(8).step(0.1).name('Depth of field');
   gStereo.add(obj, 'createSird').name('Generate Stereogram (g)');
 
-  // const grid = gui.addFolder('Grid');
-  // grid.add(obj, 'items').min(50).max(300).step(1).name('Items');
-
-  // const guiVib = gui.addFolder('Vibration');
-  // guiM = guiVib.add(obj, 'freqM').min(1).max(20).step(1).name('M Frequency').disable();
-  // guiN = guiVib.add(obj, 'freqN').min(1).max(20).step(1).name('N Frequency').disable();
-  // guiVib.add(obj, 'vibration').min(0.01).max(0.1).step(0.01).name('Dept');
-
-  // const guiItem = gui.addFolder('Particle');
-  // guiItem.add(obj, 'itemSize').min(0.1).max(2).step(0.1).name('Size');
-
-  // const guiAudio = gui.addFolder('Audio');
-  // guiAudio.add(obj, 'playSynth').name('Play Synth');
-
   const gPreset = gui.addFolder('Preset');
   gPreset.add(obj, 'savePreset' ).name('Save Preset');
   gPreset.add(obj, 'clearStorage').name('Clear Preset');
-  // gui.add(obj, 'startOver').name('Play Again');
-  // gui.add(obj, 'saveImage').name('Save Image (s)');
 
   gui.onChange( event => {
     // fix for painting
@@ -225,8 +209,6 @@ function setupLil(){
           guiPatWords.show();
           gColNum.hide();
           gColNum.setValue(2);
-          // setta il numero di colori a 2
-          // nascondi number of colors
         } else {
           guiPatWords.hide();
           gColNum.show();
@@ -344,35 +326,10 @@ obj.loadPreset = function() {
   gui.load(preset);
 };
 
-obj.export = function() {
-  saveToStorage();
-  let url = window.location.href;    
-  if (url.indexOf('?') > -1){
-    url += '&export=true';
-  } else {
-    url += '?export=true';
-  }
-  window.location.href = url;
-};
-
 obj.clearStorage = function() {
   localStorage.removeItem(storageName);
   window.location = window.location.href.split("?")[0];
 };
-
-obj.startOver = function(){
-  saveToStorage();
-  window.location = window.location.href.split("?")[0];
-};
-
-obj.stopExport = function(){
-  sketchExportEnd();
-};
-
-obj.saveImage = function(){
-  let fileName = getFileName('visual');
-  saveCanvas(fileName, 'png');
-}
 
 obj.dmUpload = function(){
   let fileInput = createFileInput(handleFile);
@@ -382,7 +339,7 @@ obj.dmUpload = function(){
   fileInput.elt.click();
 }
 
-// Funzione callback per gestire il caricamento del file
+// callback to handle file loading
 function handleFile(file) {
   if (file.type === 'image') {
     dmImage = loadImage(file.data);

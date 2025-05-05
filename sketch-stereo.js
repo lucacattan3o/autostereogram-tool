@@ -37,20 +37,16 @@ function createSird(){
   let output = document.getElementById('stereogram-output');
   output.classList.add('ready');
 
-  // guiBrushOn.setValue(false);
-
   updateStereoColors(obj.nColors);
 
-  // calcolo la larghezza della colonna del pattern
+  // column width
   let eyeSep = Math.round(obj.stereoEyeSep / 2.54 * obj.stereoDpi);
   patColWidth = Math.round(eyeSep / 2) + 1;
   if (obj.patType == 'Check Width') {
     console.debug('--------------');
     console.debug('EyeSep: ' + eyeSep);
   }
-  // se il pattern è invertito, la mappa di profondità è tutta bianca
-  // z quindi di base è a 1
-  // posso ricavare di quanto sono state rimpicciolite le colonne
+  // different calculations for inverted maps
   if (obj.stereoInvert){
     let z = 1;
     let mu = (1 / obj.stereoMu);
@@ -84,15 +80,11 @@ function createSird(){
       break;
     
     case 'Worley Noise':
-      // create some random points in the space
-      // check the closer point
-      // set the color based on distance
       patternBuilderWorleyNoisePre();
       patternBuilder = patternBuilderWorleyNoise;
       break;
 
     case 'Vertical Lines':
-      patternBuilderVerticalLinesPre();
       patternBuilder = patternBuilderVerticalLines;
       break;
 
@@ -113,8 +105,6 @@ function createSird(){
     inverted: obj.stereoInvert,
   });
 
-  // console.debug(depthMapper);
-
   Stereogram.render({
     el: 'stereogram',
     width:  w,
@@ -131,10 +121,6 @@ function createSird(){
 
 // ** PATTERN BUILDERS **
 // ----------------------
-
-function patternBuilderVerticalLinesPre(){
-  // console.debug(stereoColors);
-}
 
 function patternBuilderVerticalLines(x, y){
   let px = width - 1 - x;
@@ -164,10 +150,9 @@ function patternBuilderCheckWidth(x, y){
       console.debug('Scarto: ' + (patColWidth - diff));
     }
   }
-  // x parte da destra (99 fino a 0)
-  // calcolo dei valori di x più semplici
-  // partono da 0 e arrivano a patColWidth (89)
+  // x start from right (99 to 0)
   let px = width - 1 - x;
+  // remap to (o to patColWidth)
   let mx = map(px, 0, patColWidth, 0, 1);
   let scale = 0.5 * obj.patScale;
   if (mx % scale >= scale * 0.5){
@@ -182,7 +167,7 @@ function patternBuilderCheckWidth(x, y){
 
 function patternBuilderPerlinNoise(x, y){
   let px = width - 1 - x;
-  // seamless
+  // seamless pattern
   if (px > patColWidth * 0.5){
     px = patColWidth - px;
   }
@@ -197,7 +182,7 @@ function patternBuilderPerlinNoise(x, y){
 
 function patternBuilderPerlinNoiseSinusoidal(x, y){
   let px = width - 1 - x;
-  // seamless
+  // seamless pattern
   if (px > patColWidth * 0.5){
     px = patColWidth - px;
   }
@@ -247,9 +232,8 @@ function patternBuilderWorleyNoise(x, y){
   let px = width - 1 - x;
   px = px % patColWidth;
   let minDist = w;
-  // trovo il punto più vicino
-  // ottimizzo l'algoritmo facendo il check solo
-  // con i punti che presumo sia i più vicini
+  // performance trick
+  // cheking only the nearest 5
   let totPoints = worleyPoints.length;
   let deltaPoints = floor(totPoints / 5);
   if (deltaPoints < 5){
@@ -265,7 +249,6 @@ function patternBuilderWorleyNoise(x, y){
   if (stepEnd > totPoints){
     stepEnd = totPoints;
   }
-  // for (let i = 0; i < worleyPoints.length; i++) {
   for (let i = stepStart; i < stepEnd; i++) {
     const point = worleyPoints[i];
     let d = dist(px, y, point.x, point.y);
@@ -299,9 +282,9 @@ function patternBuilderLettersPre(){
     pgLetter = createGraphics(patColWidth, height);
     pgLetter.background(stereoColors[0]);
     let lineHeight = (height / 30 * obj.patScale);
-    // dimensione del font calligrafico
-    pgLetter.textFont(font, lineHeight * 2); 
-    // dimensione raleway
+    // calligraphic font dimension
+    // pgLetter.textFont(font, lineHeight * 2); 
+    // raleway font dimension
     pgLetter.textFont(font, lineHeight * 1.3);
     let nRows = height / lineHeight;
     for (i = 0; i < nRows; i++ ){
@@ -319,10 +302,7 @@ function patternBuilderLettersPre(){
         pgLetter.text(line, 0, 0);
       pgLetter.pop();
     }
-    // image(pgLetter, 0, 0);
-    // pgLetter.scale(1, -1);
     pgLetter.loadPixels();
-    // let c = pgLetter.get(7, 30);
   pop();
 }
 
@@ -330,7 +310,6 @@ function patternBuilderLetters(x, y){
   let px = width - 1 - x;
   px = px % pgLetter.width;
   px = pgLetter.width - px - 1;
-  // py = py % pgLetter.height;
   let rgba = pgLetter.get(px, y);
   if (rgba[3] !== 255){
     rgba = [0, 255, 255, 255];
@@ -383,7 +362,7 @@ function getLerpColorByNoiseValue(n){
 
 function getColorByNoiseValue(n){
   let nColors = stereoColors.length - 1;
-  // qui è giusto il map con stereoColore.length per far uscire l'ultimo colore
+  // this map is right; we need also the last color of the palette 
   let ci = floor(map(n, 0, 1, 0, stereoColors.length, true));
   if (ci < 0){
     ci = 0;
