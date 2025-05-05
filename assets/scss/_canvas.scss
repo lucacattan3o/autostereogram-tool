@@ -1,0 +1,20 @@
+.body--mkt,
+.body--sketch{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+canvas {
+  box-shadow: 0px 0px 15px 5px rgba($black,0.3);
+}
+
+.footer--sketch{
+  background-color: rgba(#000, 0.5);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0.25em 0.75em;
+  text-align: right;
+  font-size: $font-size-xs;
+}
