@@ -33,22 +33,22 @@ let obj = {
   stereoEyeSep: 6.35,  // eye separation in cm
   stereoDpi:    72,    // dpi
   stereoMu:     2,     // depth of field (fraction of viewing distance: 1 / x) (3 default) - low value >> gread depth
-  nColors: 5,
+  nColors: 2,
   invertColors: false,
   // pattern
-  patType: 'Perlin Noise',
+  patType: 'Letter Noise',
   patScale: 0.4,
   patGradScale: 0.5,
   // words
   patWords: 'del nostro scavo continuo',
   // rivers
-  rivLevels: 1,
-  rivItems: 3,
+  rivLevels: 5,
+  rivItems: 4,
   rivItemOpacity: 0.01,
-  rivItemSize: 20,
+  rivItemSize: 22,
   rivSpeed: 3,
   rivNoiseScale: 0.3,
-  rivNoiseSeed: 232,
+  rivNoiseSeed: 1,
 };
 
 function setupLil(){
