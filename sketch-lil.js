@@ -61,7 +61,7 @@ function setupLil(){
   gCanvas.add(obj, 'canvasH').min(100).max(1771).step(1).name('Height');
   gCanvas.add(obj, 'canvasMulty').min(0.25).max(1).step(0.25).name('Multiply');
 
-  const gMode = gui.addFolder('Depth Mode');
+  const gMode = gui.addFolder('Depth Map');
   gMode.add( obj, 'depthMode', [
     'Rivers',
     'Image',
