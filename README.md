@@ -46,9 +46,17 @@ You can choose between four types of depth map generation:
 
 *Rivers* and *Well* mode were used to generate the outputs for the artistic performance.
 
-### Stereogram Generation
+### Autostereogram Generation
 
-Coming soon
+In the *Autostereogram* panel you can choose the type of noise you want for the pattern and actually generate it with the **Generate Autostereogram** button (or the *g* key on the keyboard). 
+
+Noise types:
+
+- **SIRD**: the pattern is generated using random dots. This is the best performing pattern: it makes the autostereogram easier to see because it is rich in details.
+
+- **Perlin Noise**: this pattern is generated using the p5.js perlin noise. It performs well and it is quite easy to see the autostereogram.
+
+- **Perlin Noise Sinusoidal**: This noise is an evolution of the previous one, it uses perlin noise in combination with the sin() function of p5.js.
 
 #### Advanced Panel
 

@@ -107,7 +107,7 @@ function setupLil(){
   gWell.add(obj, 'wellSteps').min(2).max(40).step(1).name('Steps');
 
   // Stereogram
-  const gStereo = gui.addFolder('Stereogram');
+  const gStereo = gui.addFolder('Autostereogram');
   gStereo.add(obj, 'stereoInvert').name('Invert Depth Map');
   gStereo.add( obj, 'patType', [
     'Letter Noise',
@@ -139,7 +139,7 @@ function setupLil(){
   gAdv.add(obj, 'stereoEyeSep').min(5).max(8).step(0.1).name('Eye Separation');
   gAdv.add(obj, 'stereoDpi').min(72).max(300).step(1).name('DPI');
   gAdv.add(obj, 'stereoMu').min(1.1).max(8).step(0.1).name('Depth of field');
-  gStereo.add(obj, 'createSird').name('Generate Stereogram (g)');
+  gStereo.add(obj, 'createSird').name('Generate Autostereogram (g)');
 
   const gPreset = gui.addFolder('Preset');
   gPreset.add(obj, 'savePreset' ).name('Save Preset');
