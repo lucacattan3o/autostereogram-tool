@@ -8,7 +8,7 @@ This tool allows you to generate autostereograms using:
 - different types of depth maps.  
 - different types of noise.
 
-[Try it](https://lucacattan3o.github.io/autostereogram-tool/index.html) in your browser.
+[Try it](https://lucacattan3o.github.io/autostereogram-tool/index.html) in your browser. It's also available on [metronimie.com](https://www.metronimie.com/tool/letternoise/).
 
 It's developed in JavaScript and p5.js and it's based on a slightly modified version of the great library [Stereogram.js](https://github.com/tony-pizza/Stereogram.js).
 
