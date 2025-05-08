@@ -14,7 +14,7 @@ It's developed in JavaScript and p5.js and it's based on a slightly modified ver
 
 ## Credits
 
-This tool is developed by [Mekit](https://www.mekit.it) within the project [Residenza Poietica 2024](https://www.metronimie.com/it/residenza-poietica-2024) for the performance [Del nostro scavo continuo](https://www.metronimie.com/it/eventi/del-nostro-scavo-continuo-performance-di-restituzione-di-residenza-poietica-2024).
+This tool is developed by [Mekit](https://www.mekit.it) within the project [Residenza Poietica 2024](https://www.metronimie.com/it/residenza-poietica-2024) for the artistic performance [Del nostro scavo continuo](https://www.metronimie.com/it/eventi/del-nostro-scavo-continuo-performance-di-restituzione-di-residenza-poietica-2024).
 
 Developer: *[Luca Cattaneo](https://lucacattan3o.github.io/)*  
 Artists: *Emanuele Caprioli, Caterina Dufì and Simone Spampinato*  
