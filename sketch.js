@@ -66,7 +66,9 @@ function setupCanvas(){
   w = floor(obj.canvasW * obj.canvasMulty);
   h = floor(obj.canvasH * obj.canvasMulty);
   createCanvas(w, h);
-  responsiveSketch();
+  responsiveSketch({
+    margin: 20,
+  });
   frameRate(fps);
 
   let img = document.getElementById('stereogram');

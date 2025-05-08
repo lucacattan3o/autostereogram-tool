@@ -2,6 +2,8 @@
 
 An *autostereogram* is a two-dimensional image traditionally composed of a chaotic pattern repeated multiple times. With a little practice and the correct viewing technique, it is possible to make the hidden three-dimensional image emerge from within it.
 
+![A screenshot of the Autostereogram Tool](/assets/imgs/doc/preview-rivers.png)
+
 This tool allows you to generate autostereograms using:
 - different types of depth maps.  
 - different types of noise.
