@@ -60,6 +60,7 @@ function setupLil(){
   gCanvas.add(obj, 'canvasW').min(100).max(4133).step(1).name('Width');
   gCanvas.add(obj, 'canvasH').min(100).max(1771).step(1).name('Height');
   gCanvas.add(obj, 'canvasMulty').min(0.25).max(1).step(0.25).name('Multiply');
+  gCanvas.close();
 
   const gMode = gui.addFolder('Depth Map');
   gMode.add( obj, 'depthMode', [
@@ -108,14 +109,13 @@ function setupLil(){
 
   // Stereogram
   const gStereo = gui.addFolder('Autostereogram');
-  gStereo.add(obj, 'stereoInvert').name('Invert Depth Map');
   gStereo.add( obj, 'patType', [
-    'Letter Noise',
     'SIRD',
     'Perlin Noise',
     'Perlin Noise Sinusoidal',
     'Worley Noise',
-    'Vertical Lines'
+    'Vertical Lines',
+    'Letter Noise'
     // 'Check Width',
   ]).name('Noise Type');
   guiPatScale = gStereo.add(obj, 'patScale').min(0.1).max(1).step(0.01).name('Noise Scale');
@@ -134,11 +134,14 @@ function setupLil(){
   });
   updateStereoColors(obj.nColors);
   gStereo.add(obj, 'invertColors').name('Invert Colors');
-  
+  gStereo.add(obj, 'stereoInvert').name('Invert Depth Map');
+
+
   const gAdv = gStereo.addFolder('Advanced').close();
   gAdv.add(obj, 'stereoEyeSep').min(5).max(8).step(0.1).name('Eye Separation');
   gAdv.add(obj, 'stereoDpi').min(72).max(300).step(1).name('DPI');
   gAdv.add(obj, 'stereoMu').min(1.1).max(8).step(0.1).name('Depth of field');
+  
   gStereo.add(obj, 'createSird').name('Generate Autostereogram (g)');
 
   const gPreset = gui.addFolder('Preset');
