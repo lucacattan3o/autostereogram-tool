@@ -42,7 +42,7 @@ You can choose between four types of depth map generation:
 
 - **Rivers**: edit the various parameters to obtain the generation of different types of rivers.
 
-- **Image**: use this mode to upload a custom *Depth Map Image* like [this one](https://upload.wikimedia.org/wikipedia/commons/8/82/Esempio_di_Depth_Map.jpg).
+- **Image**: use this mode to upload a custom *Depth Map Image*.
 
 - **Paint**: Use this mode to paint the *Depth Map* with your mouse. Change the brush color to draw at different depth levels.
 
