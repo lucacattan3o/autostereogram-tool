@@ -59,8 +59,7 @@ Use this mode to paint the *Depth Map* with your mouse. Change the brush color t
 #### Well
 This mode creates a specific number of concentric circles at different depths.
 
-[![Depth map: concentric circles with varying brightness at the center of the sheet, indicating different depths](/assets/imgs/doc/depth-map-well.png)]
-(https://raw.githubusercontent.com/lucacattan3o/autostereogram-tool/main/assets/imgs/doc/depth-map-well.png)
+[![Depth map: concentric circles with varying brightness at the center of the sheet, indicating different depths](/assets/imgs/doc/depth-map-well.png)](https://raw.githubusercontent.com/lucacattan3o/autostereogram-tool/main/assets/imgs/doc/depth-map-well.png)
 
 If you struggle visualizing autostereograms, use the *Well* mode to generate a small figure in the center, this will help you.
 
