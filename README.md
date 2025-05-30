@@ -46,17 +46,17 @@ Edit the various parameters to obtain the generation of different types of river
 [![A depth map generated with the rivers mode](/assets/imgs/doc/depth-map-rivers.png)](https://raw.githubusercontent.com/lucacattan3o/autostereogram-tool/main/assets/imgs/doc/depth-map-rivers.png)
 
 
-#### 3. Image
+#### 2. Image
 Use this mode to upload a custom *Depth Map Image* like this one.
 
 [![An example of a custom depth map loaded as an image](/assets/imgs/doc/depth-map-image.png)](https://raw.githubusercontent.com/lucacattan3o/autostereogram-tool/main/assets/imgs/doc/depth-map-image.png)
 
-#### 4. Paint
+#### 3. Paint
 Use this mode to paint the *Depth Map* with your mouse. Change the brush color to draw at different depth levels.
 
 [![A painted depth map](/assets/imgs/doc/depth-map-paint.png)](https://raw.githubusercontent.com/lucacattan3o/autostereogram-tool/main/assets/imgs/doc/depth-map-paint.png)
 
-#### Well
+#### 4. Well
 This mode creates a specific number of concentric circles at different depths.
 
 [![Depth map: concentric circles with varying brightness at the center of the sheet, indicating different depths](/assets/imgs/doc/depth-map-well.png)](https://raw.githubusercontent.com/lucacattan3o/autostereogram-tool/main/assets/imgs/doc/depth-map-well.png)
