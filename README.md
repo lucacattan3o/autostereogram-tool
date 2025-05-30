@@ -40,13 +40,29 @@ The brightness of each pixel indicates its relative distance; brighter pixels ar
 
 You can choose between four types of depth map generation:
 
-- **Rivers**: edit the various parameters to obtain the generation of different types of rivers.
+#### 1. Rivers
+Edit the various parameters to obtain the generation of different types of rivers.
 
-- **Image**: use this mode to upload a custom *Depth Map Image*.
+![A depth map generated with the rivers mode](/assets/imgs/doc/depth-map-rivers.png)
 
-- **Paint**: Use this mode to paint the *Depth Map* with your mouse. Change the brush color to draw at different depth levels.
+#### 3. Image
+Use this mode to upload a custom *Depth Map Image* like this one.
 
-- **Well**: This mode creates a specific number of concentric circles at different depths. If you are struggle visualizing autostereograms, use the *Well* mode to generate a small figure in the center, this will help you.
+![An example of a custom depth map loaded as an image](/assets/imgs/doc/depth-map-image.png)
+
+#### 4. Paint
+Use this mode to paint the *Depth Map* with your mouse. Change the brush color to draw at different depth levels.
+
+![A painted depth map](/assets/imgs/doc/depth-map-paint.png)
+
+#### Well
+This mode creates a specific number of concentric circles at different depths.
+
+![Depth map: concentric circles with varying brightness at the center of the sheet, indicating different depths](/assets/imgs/doc/depth-map-well.png)
+
+If you struggle visualizing autostereograms, use the *Well* mode to generate a small figure in the center, this will help you.
+
+![Depth map: small concentric circles with varying brightness at the center of the sheet, indicating different depths](/assets/imgs/doc/depth-map-well-easy.png)
 
 *Rivers* and *Well* mode were used to generate the outputs for the artistic performance.
 
