@@ -2,7 +2,7 @@
 
 An *autostereogram* is a two-dimensional image traditionally composed of a chaotic pattern repeated multiple times. With a little practice and the correct viewing technique, it is possible to make the hidden three-dimensional image emerge from within it.
 
-![A screenshot of the Autostereogram Tool](/assets/imgs/doc/preview-rivers.png)
+[![A screenshot of the Autostereogram Tool](/assets/imgs/doc/preview-rivers.png)](https://lucacattan3o.github.io/autostereogram-tool/index.html)
 
 This tool allows you to generate autostereograms using:
 - different types of depth maps.  
@@ -16,7 +16,7 @@ It's developed in JavaScript and p5.js and it's based on a slightly modified ver
 
 This tool is developed by [Mekit](https://www.mekit.it) within the project [Residenza Poietica 2024](https://www.metronimie.com/it/residenza-poietica-2024) for the artistic performance [Del nostro scavo continuo](https://www.metronimie.com/it/eventi/del-nostro-scavo-continuo-performance-di-restituzione-di-residenza-poietica-2024).
 
-Developer: *[Luca Cattaneo](https://lucacattan3o.github.io/)*  
+Developer: *Luca Cattaneo*  
 Artists: *Emanuele Caprioli, Caterina Dufì and Simone Spampinato*  
 Artistic Direction: *Amalgama*  
 Design e Project Management: *Alice Turina*
@@ -76,7 +76,7 @@ Noise types:
 #### 1. SIRD
 The pattern is generated using random dots. This is the best performing pattern: it makes the autostereogram easier to see because it is rich in details.
 
-[![An autostereogram generated using a rivers-type depth map in SIRD mode](/assets/imgs/doc/sird-rivers-as.png)](https://raw.githubusercontent.com/lucacattan3o/autostereogram-tool/main/assets/imgs/doc/sird-rivers-as.png)
+[![An autostereogram generated using a rivers-type depth map in SIRD mode](/assets/imgs/doc/as-sird-rivers.png)](https://raw.githubusercontent.com/lucacattan3o/autostereogram-tool/main/assets/imgs/doc/as-sird-rivers.png)
 
 This autostereogram was generated using a rivers-type depth map.
 
